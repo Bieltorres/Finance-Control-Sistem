@@ -1,7 +1,7 @@
 import React from "react";
 import * as C from "./style";
 
-const Header = () => {
+const Header = ({ img }) => {
   return (
     <C.Container>
       <C.Header>

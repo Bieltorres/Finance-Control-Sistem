@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const Table = styled.table`
   width: 98%;
-  background-color: #5f6368;
-  color: aliceblue;
+  background-color: white;
+  color: #5f6368;
   padding: 20px;
+  border-radius: 5px;
   box-shadow: 0px 0px 5px #ccc;
   max-width: 1120px;
   margin: 20px auto;

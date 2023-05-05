@@ -4,9 +4,12 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #5f6368;
-  color: aliceblue;
+  background-color: white;
+  color: #5f6368;
   border-radius: 5px;
+
+  box-shadow: 2px 2px 5px #888888;
+
   padding: 5px 15px;
   width: 30%;
   @media (max-width: 750px) {

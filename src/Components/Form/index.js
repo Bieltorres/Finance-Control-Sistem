@@ -16,7 +16,8 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
       alert("Informe a Descrição e o Valor!");
       return;
     } else if (amount < 1) {
-      alert("O valor tem que ser Positivo(maior que 1)!");
+      alert("O valor tem que ser Positivo!");
+
       return;
     }
 
@@ -37,40 +38,43 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
     <Fragment>
       <C.Container>
         <C.InputContent>
-          <C.Label>Descrição</C.Label>
+          <C.Label>Informe a entrada/saída:</C.Label>
           <C.Input value={desc} onChange={(e) => setDesc(e.target.value)} />
         </C.InputContent>
 
         <C.InputContent>
-          <C.Label>Valor</C.Label>
+          <C.Label>Qual o valor?</C.Label>
           <C.Input
             value={amount}
             type="number"
             onChange={(e) => setAmount(parseFloat(e.target.value))}
           />
         </C.InputContent>
+        <C.Info>
+          <C.Label>Informe o tipo de operação:</C.Label>
+          <C.RadioGroup>
+            <C.Input
+              type="radio"
+              id="entries"
+              defaultChecked
+              name="group1"
+              onChange={() => setExpense(!isExpense)}
+            />
 
-        <C.RadioGroup>
-          <C.Input
-            type="radio"
-            id="entries"
-            defaultChecked
-            name="group1"
-            onChange={() => setExpense(!isExpense)}
-          />
+            <C.Label htmlFor="entries">Entrada</C.Label>
 
-          <C.Label htmlFor="entries">Entrada</C.Label>
-
-          <C.Input
-            type="radio"
-            id="exit"
-            name="group1"
-            onChange={() => setExpense(!isExpense)}
-          />
-          <C.Label htmlFor="exit">Saída</C.Label>
-        </C.RadioGroup>
-        <C.Button onClick={handleSave}>ADICIONAR</C.Button>
+            <C.Input
+              type="radio"
+              id="exit"
+              name="group1"
+              onChange={() => setExpense(!isExpense)}
+            />
+            <C.Label htmlFor="exit">Saída</C.Label>
+          </C.RadioGroup>{" "}
+        </C.Info>
+        <C.Button onClick={handleSave}>Adicionar</C.Button>
       </C.Container>
+
       <Grid itens={transactionsList} setItens={setTransactionsList} />
     </Fragment>
   );
